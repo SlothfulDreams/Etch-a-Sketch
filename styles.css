@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.sketch-container {
+    display: flex;
+    box-sizing: content-box;
+    width: 256px;
+    height: 256px;
+    border: 1px solid red;
+    flex-wrap: wrap;
+}
+
+.c {
+    width: 100%;
+    width: 16px;
+    height: 16px;
+    border: 1px solid green;
+}
