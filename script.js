@@ -5,6 +5,7 @@ squares.setAttribute(
   "style",
   "color: black; width: 16px; height: 16px; border: 1px solid black;"
 );
+const grid_count = document.querySelector("input");
 
 const make_grid = () => {
   for (i = 0; i < 256; i++) {
@@ -13,4 +14,15 @@ const make_grid = () => {
   }
 };
 
-make_grid();
+const hover_listener = (event) => {
+  sketch_container.addEventListener("mouseover", (e) => {
+    let target_square = e.target;
+    if (target_square.className != "sketch-container") {
+      console.log(target_square.className);
+      target_square.style["background-color"] = "black";
+    }
+  });
+};
+
+// make_grid();
+// hover_listener();
