@@ -6,6 +6,7 @@ squares.setAttribute(
   "color: black; width: 16px; height: 16px; border: 1px solid black;"
 );
 const grid_count = document.querySelector("input");
+const button = document.querySelector("button");
 
 const make_grid = () => {
   for (i = 0; i < 256; i++) {
@@ -23,6 +24,11 @@ const hover_listener = (event) => {
     }
   });
 };
+
+button.addEventListener("click", () => {
+  console.log(grid_count.value);
+  grid_count.value = "";
+});
 
 // make_grid();
 // hover_listener();
