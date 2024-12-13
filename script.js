@@ -26,7 +26,14 @@ const hover_listener = (event) => {
 };
 
 button.addEventListener("click", () => {
-  console.log(grid_count.value);
+  let count = grid_count.value;
+  if (count >= 10 && count <= count) {
+    console.log(grid_count.value);
+  } else if (count === "") {
+    alert("pls enter something");
+  } else {
+    alert("HEY! Thats outside the range");
+  }
   grid_count.value = "";
 });
 
