@@ -39,3 +39,9 @@ button.addEventListener("click", () => {
 
 // make_grid();
 // hover_listener();
+
+main = () => {
+  hover_listener();
+  // Need to modifiy the grid to change base on input (potentially using % to calculate size of squares)
+  make_grid();
+};
