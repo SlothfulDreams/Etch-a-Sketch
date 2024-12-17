@@ -1,15 +1,17 @@
 const sketch_container = document.querySelector(".sketch-container");
 const squares = document.createElement("div");
 squares.classList.add("square");
-squares.setAttribute(
-  "style",
-  "color: black; width: 16px; height: 16px; border: 1px solid black;"
-);
+squares.setAttribute("style", "color: black; border: 1px solid black;");
 const grid_count = document.querySelector("input");
 const button = document.querySelector("button");
+const parent_size = sketch_container.clientHeight;
 
-const make_grid = () => {
-  for (i = 0; i < 256; i++) {
+const make_grid = (size = 10) => {
+  let grid_size = parent_size / size;
+  console.log(grid_size);
+  squares.style.height = grid_size + "px";
+  squares.style.width = grid_size + "px";
+  for (i = 0; i < size * size; i++) {
     sketch_container.appendChild(squares.cloneNode(true));
     console.log("Working");
   }
@@ -40,8 +42,10 @@ button.addEventListener("click", () => {
 // make_grid();
 // hover_listener();
 
-main = () => {
-  hover_listener();
-  // Need to modifiy the grid to change base on input (potentially using % to calculate size of squares)
-  make_grid();
-};
+// main = () => {
+//   hover_listener();
+//   // Need to modifiy the grid to change base on input (potentially using % to calculate size of squares)
+//   make_grid();
+// };
+
+make_grid();
